@@ -11,8 +11,8 @@ const DUMMY_PLACES = [
         imageUrl: 'https://whc.unesco.org/uploads/thumbs/site_0252_0008-750-750-20151104113424.jpg',
         address: 'Agra',
         location: {
-            lat: 213.45543,
-            lang: 134.21345
+            lat: 40.45543,
+            lang: 70.21345
         },
         creator: 'u1'
     },
