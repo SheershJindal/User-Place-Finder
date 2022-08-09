@@ -7,59 +7,59 @@ import { useForm } from '../../shared/hooks/form-hook'
 import './PlaceForm.css'
 
 const NewPlace = () => {
-    const [formState, inputHandler] = useForm({
-        title: {
-            value: '',
-            isValid: false
-        },
-        description: {
-            value: '',
-            isValid: false
-        },
-        address: {
-            value: '',
-            isValid: false
-        }
-    }, true)
-
-    const placeSubmitHandler = event => {
-        event.preventDefault()
-        console.log(formState.inputs)
+  const [formState, inputHandler] = useForm({
+    title: {
+      value: '',
+      isValid: false
+    },
+    description: {
+      value: '',
+      isValid: false
+    },
+    address: {
+      value: '',
+      isValid: false
     }
+  }, true)
 
-    return (
-        <form className='place-form' onSubmit={placeSubmitHandler}>
-            <Input 
-                id='title'
-                element='input' 
-                type='text' 
-                label='Title' 
-                validators={[VALIDATOR_REQUIRE()]} 
-                errorText='Enter valid input.'
-                onInput={inputHandler}
-            />
-            <Input 
-                id='description'
-                element='textarea'  
-                label='Description' 
-                validators={[VALIDATOR_MINLENGTH(5)]} 
-                errorText='Enter valid description.'
-                onInput={inputHandler}
-            />
-            <Input 
-                id='address'
-                element='input'
-                label='Address' 
-                validators={[VALIDATOR_REQUIRE()]} 
-                errorText='Enter valid address.'
-                onInput={inputHandler}
-            />
-            <Buttton 
-                type='submit'
-                disabled={!formState.isValid}>Add Place
-            </Buttton>
-        </form>
-    )
+  const placeSubmitHandler = event => {
+    event.preventDefault()
+    console.log(formState.inputs)
+  }
+
+  return (
+    <form className='place-form' onSubmit={placeSubmitHandler}>
+      <Input
+        id='title'
+        element='input'
+        type='text'
+        label='Title'
+        validators={[VALIDATOR_REQUIRE()]}
+        errorText='Enter valid input.'
+        onInput={inputHandler}
+      />
+      <Input
+        id='description'
+        element='textarea'
+        label='Description'
+        validators={[VALIDATOR_MINLENGTH(5)]}
+        errorText='Enter valid description.'
+        onInput={inputHandler}
+      />
+      <Input
+        id='address'
+        element='input'
+        label='Address'
+        validators={[VALIDATOR_REQUIRE()]}
+        errorText='Enter valid address.'
+        onInput={inputHandler}
+      />
+      <Buttton
+        type='submit'
+        disabled={!formState.isValid}>Add Place
+      </Buttton>
+    </form>
+  )
 }
 
 export default NewPlace
